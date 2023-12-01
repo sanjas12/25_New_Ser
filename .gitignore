@@ -47,3 +47,7 @@ WakaTime.sublime-settings
 
 #### Python ####
 __pycache__
+
+#### Project ####
+logs*
+build*
