@@ -38,6 +38,7 @@ class MyTitle():
         # print(html)
 
         #TODO переписать на re
+        #TODO переписать на beateful soap
         css_class_index = html.find(__class__.name_css_class)
         start_title_index = css_class_index + len(__class__.start_title)
         end_title_index = html.find(__class__.end_title)
