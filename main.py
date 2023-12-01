@@ -1,14 +1,14 @@
 import time
 from urllib.request import urlopen
 
-class MyClass():
+class MyTitle():
     url = "https://www.rbc.ru/"
     start_title = "main__big__title"
     end_title = "</title>"
     file_name = ""
 
-    def __init__(self, name, age):
-        pass
+    def __init__(self):
+        self.title = None
 
     def get_title(url):
         
@@ -36,10 +36,12 @@ class MyClass():
     def write_to_file():
         pass
 
+    def __str__(self) -> str:
+         return f'{self.title}'
+
 
 if __name__ == "__main__":
-    # while True:
-        title = get_title(url)
-        
-        # print(title)
-        # time.sleep(1)
+    title = MyTitle()
+    while True:
+        print(title)
+        time.sleep(1)
