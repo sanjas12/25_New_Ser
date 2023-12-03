@@ -60,7 +60,7 @@ class MyTitle():
 
     def write_to_log_file(self):
         # print(f'{time.ctime()} --> {self.title}')
-        print(f'{self.title}')
+        print(f'{time.ctime()} -> {self.title}')
         logging.info(f"{self.title}")
 
     def add_to_base(self):
@@ -73,7 +73,7 @@ class MyTitle():
             logging.info(f"{self.title} already exist")
     
     def __str__(self) -> str:
-         return f'{self.title}'
+         return f'{time.ctime()} -> {self.title}'
 
 
 if __name__ == "__main__":
