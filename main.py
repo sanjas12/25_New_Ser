@@ -3,7 +3,7 @@ import re
 import sys
 import time
 from urllib.request import urlopen
-from config.config import LOG_FILE, FORMAT, OUT_FILE
+from config.config import *
 
 
 
@@ -82,5 +82,5 @@ if __name__ == "__main__":
         title.get_title()
         title.write_to_log_file()
         title.add_to_base()
-        time.sleep(5)
+        time.sleep(TIMEOUT)
 

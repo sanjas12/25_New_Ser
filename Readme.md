@@ -4,7 +4,9 @@
 
 ## Installation
 
-### Prerequisites
+### Prerequisites (Server-Ubuntu) 82.146.47.129 
+
+4. install list-extensions for vscode
 
 ### Usage
 

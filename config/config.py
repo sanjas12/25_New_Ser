@@ -15,7 +15,5 @@ OUT_FILE = Path(OUT_DIR, 'news')
 #Logging
 FORMAT = '%(asctime)s:%(levelname)s:%(message)s'
 
-MYTIME = 'my time, c'
-
-# plot
-TICK_MARK_COUNT = 10
+#Time
+TIMEOUT = 120
