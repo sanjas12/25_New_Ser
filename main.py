@@ -73,7 +73,7 @@ class MyTitle():
             logging.info(f"{self.title} already exist")
     
     def __str__(self) -> str:
-         return f'{self.title}'
+         return f'{time.ctime()} -> {self.title}'
 
 
 if __name__ == "__main__":
