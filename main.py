@@ -1,11 +1,11 @@
 import logging
+import os
 # import pprint
 import re
 import sys
 import time
 from urllib.request import urlopen
 from config.config import *
-
 
 
 if sys.version_info[1]>=9:
@@ -60,6 +60,9 @@ class MyTitle():
         return self.title
 
     def read_old_news(self):
+        if not os.path.exists(OUT_FILE):
+            with open(OUT_FILE, 'w+', encoding="UTF-8"):
+                pass
         #TODO add exist file.
         with open(OUT_FILE, '+r', encoding="UTF-8") as f:
             for line  in f.readlines():
@@ -92,4 +95,4 @@ if __name__ == "__main__":
         title.write_to_log_file()
         title.add_to_base()
         time.sleep(TIMEOUT)
-
+        

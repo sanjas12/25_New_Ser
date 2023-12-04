@@ -1,9 +1,8 @@
-#0.0.0.0
-import sys
+#0.0.0.1
 from cx_Freeze import setup, Executable
 
-
 file = "setup.py"
+project_name = "new_ser"
 
 with open(file, 'r+', encoding='utf-8') as f:
     version = f.readline().split('.')
@@ -13,29 +12,25 @@ with open(file, 'r+', encoding='utf-8') as f:
     f.write(version)
 
 # для включения конкретных файлов в build
-# files = [("install.cmd")]
-
+files = ["database/", "config/"]
 
 # Dependencies are automatically detected, but it might need fine tuning.
 build_exe_options = {
-    "excludes": ["tkinter", "unittest", "http",
-                "PyQT5.QtopenGL4",
-                "pydoc_data", "email",
-                "concurent", "xml",
-                "asyncio", "curses", "distutils", "html", "multiprocessing",
-                "sqlite3", "test"],
-    "optimize": 0,      # c 2 exe не запускается
+    # "excludes": ["tkinter", "unittest"],
+    # "packages": ["config"],
+    # "includes": ["config"],
+    "optimize": 2,      # c 2 exe не запускается
     # "zip_include_packages": ["PyQt5", "matplotlib"],
-    # "include_files" : files
+    "include_files" : files
 }
 
 # base="Win32GUI" should be used only for Windows GUI app
-base = "Win32GUI" if sys.platform == "win32" else None
+# base = "Win32GUI" if sys.platform == "win32" else None
 
 setup(
-    name="new_ser",
+    name=project_name,
     version="0.0.0.1",
     description="My new service",
     options={"build_exe": build_exe_options},
-    executables=[Executable("main.py", target_name="new_ser",  base=base)],
+    executables=[Executable("main.py", target_name="new_ser")],
 )
