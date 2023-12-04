@@ -60,6 +60,7 @@ class MyTitle():
         return self.title
 
     def read_old_news(self):
+        #TODO add exist file.
         with open(OUT_FILE, '+r', encoding="UTF-8") as f:
             for line  in f.readlines():
                 time, title = line.split(';')
