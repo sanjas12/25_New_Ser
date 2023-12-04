@@ -1,4 +1,5 @@
 import logging
+import pprint
 import re
 import sys
 import time
@@ -26,7 +27,7 @@ class MyTitle():
         self.url = "https://www.rbc.ru/"
         self.title = None
         self.dict_news = dict()
-        # self.get_title()
+        self.read_old_news()
 
     def get_title(self):
         
@@ -58,15 +59,22 @@ class MyTitle():
 
         return self.title
 
+    def read_old_news(self):
+        with open(OUT_FILE, '+r', encoding="UTF-8") as f:
+            for line  in f.readlines():
+                time, title = line.split(';')
+                if title not in self.dict_news:
+                    self.dict_news[title] = time
+        pprint.pprint(self.dict_news)
+
     def write_to_log_file(self):
-        # print(f'{time.ctime()} --> {self.title}')
         print(f'{time.ctime()} -> {self.title}')
         logging.info(f"{self.title}")
 
     def add_to_base(self):
         if self.title not in self.dict_news:
             self.dict_news[self.title] = time.ctime
-            title = '\t'.join((time.ctime(), self.title, '\n'))
+            title = ';'.join((time.ctime(), self.title, '\n'))
             with open(OUT_FILE, '+a', encoding="UTF-8") as f:
                 f.write(title)
         else:
