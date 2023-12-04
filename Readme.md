@@ -10,6 +10,9 @@
 1. install list-extensions for vscode
 2. pip install python3-pip
 3. upgrade python to 3.11.5
+    3.1 sudo add-apt-repository ppa:deadsnakes/ppa -y
+    3.2 sudo apt install python3.11
+    3.3 python3.11
 
 ### Usage
 
