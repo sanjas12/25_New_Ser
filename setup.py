@@ -22,10 +22,10 @@ build_exe_options = {
                 "PyQT5.QtopenGL4",
                 "pydoc_data", "email",
                 "concurent", "xml",
-                # "asyncio", "curses", "distutils", "html", "multiprocessing",
-                "sqlite3", "test", "urlib"],
+                "asyncio", "curses", "distutils", "html", "multiprocessing",
+                "sqlite3", "test"],
     "optimize": 0,      # c 2 exe не запускается
-    "zip_include_packages": ["PyQt5", "matplotlib"],
+    # "zip_include_packages": ["PyQt5", "matplotlib"],
     # "include_files" : files
 }
 
