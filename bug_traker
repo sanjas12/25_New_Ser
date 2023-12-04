@@ -1,0 +1,7 @@
+1. При компиляции и запуске исходника на Ubuntu:
+    urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] 
+    certificate verify failed: unable to get local issuer certificate (_ssl.c:1131)>
+
+
+    решение -> https://peps.python.org/pep-0476/
+            
