@@ -7,6 +7,7 @@
 ### Prerequisites (Server-Ubuntu) 82.146.47.129 
 
 1. install list-extensions for vscode
+2. pip install python3-pip
 
 ### Usage
 
