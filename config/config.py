@@ -16,4 +16,4 @@ OUT_FILE = Path(OUT_DIR, 'news')
 FORMAT = '%(asctime)s:%(levelname)s:%(message)s'
 
 #Time
-TIMEOUT = 120
+TIMEOUT = 600

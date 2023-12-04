@@ -1,5 +1,5 @@
 import logging
-import pprint
+# import pprint
 import re
 import sys
 import time
@@ -63,10 +63,10 @@ class MyTitle():
         #TODO add exist file.
         with open(OUT_FILE, '+r', encoding="UTF-8") as f:
             for line  in f.readlines():
-                time, title = line.split(';')
+                time, title, _ = line.split(';')
                 if title not in self.dict_news:
                     self.dict_news[title] = time
-        pprint.pprint(self.dict_news)
+        # pprint.pprint(self.dict_news)
 
     def write_to_log_file(self):
         print(f'{time.ctime()} -> {self.title}')
