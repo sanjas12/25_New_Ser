@@ -12,6 +12,8 @@
 3. python3 setup.py build 
 
 ### Usage
+cat -e -t -v Makefile      <!-- check makefile -->
+make -f Makefile.win run
 
 ### TODO
 
