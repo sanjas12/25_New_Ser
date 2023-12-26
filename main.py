@@ -7,13 +7,21 @@ import time
 from urllib.request import urlopen
 from config.config import *
 from orm import Title, DbSession
-from bot import MyBot
+# from bot import MyBot
 
 if sys.version_info[1]>=9:
-    logging.basicConfig(filename=LOG_FILE, encoding='utf-8', level=logging.INFO, format=FORMAT)
+    logging.basicConfig(
+        filename=LOG_FILE, 
+        encoding='utf-8', 
+        level=logging.INFO,
+        format=FORMAT
+        )
 else:
-    logging.basicConfig(handlers=[logging.FileHandler(filename=LOG_FILE, encoding='utf-8', mode='a')],
-                        format=FORMAT, level=logging.INFO)
+    logging.basicConfig(
+        handlers=[logging.FileHandler(filename=LOG_FILE, encoding='utf-8', mode='a')],
+        level=logging.INFO,
+        format=FORMAT
+        )
 
 
 class MyTitle():
@@ -33,7 +41,7 @@ class MyTitle():
         self.orm_base_news = Title()
         self.read_local_base()
         self.is_add_new_title = None
-        self.bot = MyBot()
+        # self.bot = MyBot()
 
     def get_title_content(self) -> tuple:
         page = urlopen(self.url)
@@ -67,7 +75,7 @@ class MyTitle():
         if self.title not in self.dict_title:
             self.add_to_local_base()
             self.add_to_database()
-            self.is_add_new_title()
+            # self.is_add_new_title()
         else:
             self.log_message('already exist in local base and database')
         return self.title, self.content, self.timestamp 
@@ -110,7 +118,7 @@ class MyTitle():
 
     def is_add_new_title(self) -> bool:
         self.is_add_new_title = True
-        self.to_telegram_bot()
+        # self.to_telegram_bot()
         return self.is_add_new_title
 
     def to_telegram_bot(self):

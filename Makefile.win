@@ -1,5 +1,0 @@
-.PHONY: run
-
-run:
-    make -f Makefile.win run
-    python -m dotenv bot.pym
